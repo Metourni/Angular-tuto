@@ -3,6 +3,6 @@
 </h2>
 
 <h3 style="color: red">{{errorMessage}}</h3>
-<ul *ngFor="let language of languages">
-  <li> id:{{language.id}} - name: {{language.name}} - version:{{language.version}}</li>
+<ul>
+  <li *ngFor="let language of languages"> id:{{language.id}} - name: {{language.name}} - version:{{language.version}}</li>
 </ul>

@@ -1,0 +1,10 @@
+<h3>
+  list systemes!
+</h3>
+
+<ul>
+  <li *ngFor="let system of systems" (click)="onSelect(system)">
+    {{system.name}}
+  </li>
+</ul>
+

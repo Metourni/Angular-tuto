@@ -10,6 +10,15 @@
 
 
   <hr>
+  <h1>Routing and navigations</h1>
+  <nav>
+    <a class="btn btn-dafault" routerLink="/languages" routerLinkActive="active">Languages </a>
+    <a class="btn btn-dafault" routerLink="/systems" routerLinkActive="active">Systems </a>
+  </nav>
+  <router-outlet></router-outlet>
+
+
+  <hr>
   <h1>Services and Http requests</h1>
   <app-list-languages></app-list-languages>
   <app-list-details-languages></app-list-details-languages>
@@ -47,4 +56,3 @@
 </div>
 
 
-<router-outlet></router-outlet>

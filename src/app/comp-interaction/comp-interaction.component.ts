@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-comp-interaction',
@@ -8,11 +8,18 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CompInteractionComponent implements OnInit {
 
   @Input('parentData')
-  public text ;
+  public text;
 
-  constructor() { }
+  @Output()
+  public childEvent = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  onClick() {
+    this.childEvent.emit('heyy from child');
+  }
 }

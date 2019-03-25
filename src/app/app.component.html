@@ -5,10 +5,11 @@
     <h1>
       Welcome to {{ title }}!
     </h1>
+    <p> message from child : {{msg}}</p>
   </div>
 
   <hr>
-  <app-comp-interaction [parentData]="name"></app-comp-interaction>
+  <app-comp-interaction (childEvent)="msg=$event" [parentData]="name"></app-comp-interaction>
 
   <hr>
   <app-ng-for></app-ng-for>

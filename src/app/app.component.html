@@ -8,9 +8,15 @@
     <p> message from child : {{msg}}</p>
   </div>
 
+
+  <hr>
+  <h1>Services and Http requests</h1>
+  <app-list-languages></app-list-languages>
+  <app-list-details-languages></app-list-details-languages>
+
+
   <hr>
   <app-pipes></app-pipes>
-
 
   <hr>
   <app-comp-interaction (childEvent)="msg=$event" [parentData]="name"></app-comp-interaction>

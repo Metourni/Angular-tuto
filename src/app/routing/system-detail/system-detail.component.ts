@@ -7,13 +7,21 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
     <h4>
       The id of the system : {{systemId}} !
     </h4>
+
+    <div>
+      <button (click)="showOverview()">Overview</button>
+    </div>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+
     <div>
       <button (click)="gePrevious()">Previous</button>
       <button (click)="goNext()">Next</button>
     </div>
     <div>
       <button (click)="goToSystems()">Go Back</button>
-      <button></button>
     </div>
   `,
   styles: []
@@ -46,5 +54,9 @@ export class SystemDetailComponent implements OnInit {
 
   goToSystems() {
     this.router.navigate(['../', {id: this.systemId}], {relativeTo: this.activatedRoute});
+  }
+
+  showOverview() {
+    this.router.navigate(['overview'], {relativeTo: this.activatedRoute});
   }
 }

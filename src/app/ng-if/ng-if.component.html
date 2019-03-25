@@ -1,0 +1,25 @@
+<h1>
+  ng-if !
+</h1>
+
+<h3 *ngIf="true">Ng If show text</h3>
+
+<h3 *ngIf="showText; else elseBlock">Ng If propriety binding</h3>
+
+<ng-template #elseBlock>
+  <h3>
+    Else content
+  </h3>
+</ng-template>
+
+<p>Another way to do if else </p>
+
+<div *ngIf="displayElement; then thenElement; else elseElement"></div>
+<ng-template #thenElement>
+  <h3>Then code</h3>
+</ng-template>
+<ng-template #elseElement>
+  <h3>Else code</h3>
+</ng-template>
+
+

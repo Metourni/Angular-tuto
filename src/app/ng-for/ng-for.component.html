@@ -1,0 +1,13 @@
+<h1>
+  ng-for !
+</h1>
+
+<ul *ngFor="let color of colors; index as i; first as f; last as l; even as e; odd as o">
+  <li>
+    {{i + 1 + "- " + color}}
+    => Is first : {{f}} ||
+    Is last : {{l}} ||
+    Is even : {{e}} ||
+    Is odd : {{o}}
+  </li>
+</ul>

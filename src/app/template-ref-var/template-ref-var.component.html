@@ -1,0 +1,8 @@
+<h1>
+  template-ref-var works!
+</h1>
+
+
+<input #metoInput type="text" >
+<p>#metoInput is a template reference to the input</p>
+<button (click)="logMessage(metoInput.value)">log the input value</button>

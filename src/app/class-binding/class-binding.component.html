@@ -1,0 +1,14 @@
+<h1>
+  class binding !
+</h1>
+
+
+<h3 class="text-success">Default case</h3>
+<h3 [class]="successClass">The default class bind</h3>
+<h3 class="{{successClass}}">This way has to many limitations</h3>
+
+<h3 class="text-success" [class]="'text-danger'">If you use both of class declaration ng will use the binf</h3>
+
+<h3 [class.text-danger]="hasError">If hasError==true => put the class :'text-danger'</h3>
+
+<h3 [ngClass]="messageClass">If you want to set to many class in the same time</h3>

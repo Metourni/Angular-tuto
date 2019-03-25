@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-list-systemes',
@@ -9,8 +9,9 @@ import {Router} from '@angular/router';
 export class ListSystemesComponent implements OnInit {
 
   systems = [];
+  selectedSystemId;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -19,9 +20,19 @@ export class ListSystemesComponent implements OnInit {
       {id: 2, name: 'windows'},
       {id: 3, name: 'linux'}
     ];
+
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
+      let id = parseInt(params.get('id'));
+      this.selectedSystemId = id;
+    });
+
   }
 
   onSelect(system) {
     this.router.navigate(['/systems', system.id]);
+  }
+
+  isSelected(system) {
+    return system.id === this.selectedSystemId;
   }
 }

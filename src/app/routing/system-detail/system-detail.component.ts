@@ -7,8 +7,14 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
     <h4>
       The id of the system : {{systemId}} !
     </h4>
-    <button (click)="gePrevious()">Previous</button>
-    <button (click)="goNext()">Next</button>
+    <div>
+      <button (click)="gePrevious()">Previous</button>
+      <button (click)="goNext()">Next</button>
+    </div>
+    <div>
+      <button (click)="goToSystems()">Go Back</button>
+      <button></button>
+    </div>
   `,
   styles: []
 })
@@ -20,7 +26,7 @@ export class SystemDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    //const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
+    // const id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
     // this.systemId = id;
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       let id = parseInt(params.get('id'));
@@ -36,5 +42,9 @@ export class SystemDetailComponent implements OnInit {
   goNext() {
     let nxId = this.systemId + 1;
     this.router.navigate(['/systems', nxId]);
+  }
+
+  goToSystems() {
+    this.router.navigate(['/systems', {id: this.systemId}]);
   }
 }

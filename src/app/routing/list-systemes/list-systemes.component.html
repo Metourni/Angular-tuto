@@ -3,7 +3,7 @@
 </h3>
 
 <ul>
-  <li *ngFor="let system of systems" (click)="onSelect(system)">
+  <li *ngFor="let system of systems" (click)="onSelect(system)" [style.color]="isSelected(system)?'green':''">
     {{system.name}}
   </li>
 </ul>

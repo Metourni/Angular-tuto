@@ -45,6 +45,6 @@ export class SystemDetailComponent implements OnInit {
   }
 
   goToSystems() {
-    this.router.navigate(['/systems', {id: this.systemId}]);
+    this.router.navigate(['../', {id: this.systemId}], {relativeTo: this.activatedRoute});
   }
 }

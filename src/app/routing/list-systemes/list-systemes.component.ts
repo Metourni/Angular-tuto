@@ -29,7 +29,9 @@ export class ListSystemesComponent implements OnInit {
   }
 
   onSelect(system) {
-    this.router.navigate(['/systems', system.id]);
+    // this.router.navigate(['/systems', system.id]);
+    // Using Relative path
+    this.router.navigate([system.id], {relativeTo: this.activatedRoute});
   }
 
   isSelected(system) {
